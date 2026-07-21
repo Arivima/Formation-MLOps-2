@@ -19,6 +19,7 @@ jobs:
         run: uv sync --locked --all-groups
       - name: Run Linter
         run: uv run ruff check --output-format=github
-      # - name: Run tests
-      #   run: "Trainee should add command to run test"
-
+      - name: Run Linter
+        run: uv run ruff format --diff
+      - name: Test with pytest
+        run: uv run pytest
